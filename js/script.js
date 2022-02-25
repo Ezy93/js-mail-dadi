@@ -4,6 +4,9 @@ let mailList = ["harder@gmail.com" , "better@outlook.it" , "faster@yahoo.it", "s
 /* selziono l'elemento nel DOM tramite ID */
 let userSubmit = document.getElementById("submit");
 
+let userDice = document.getElementById("userDice");
+let cpuDice = document.getElementById("cpuDice");
+let message = document.getElementById("message");
 
 
 /* creo un event lister per click sul bottone */
@@ -22,6 +25,21 @@ userSubmit.addEventListener('click', function(){
             document.getElementById("output").innerHTML = "complimenti sei autorizzato al gioco clandestino  nella nostra bisca";
 
             //TODO: AGGIUNGERE IL GIOCO DEI DADI SOLO SE L'UTENTE HA ACCESSO 
+            userDice.innerHTML = Math.round(Math.random()*5)+1;
+
+            cpuDice.innerHTML = Math.round(Math.random()*7)-1;
+
+            if(userDice.innerHTML === cpuDice.innerHTML){
+
+                message.innerHTML= "che disdetta è un pareggio"
+
+            } else if( userDice.innerHTML < cpuDice.innerHTML){
+
+                message.innerHTML = "hai perso sgancia il denaro"
+
+            }else{
+                message.innerHTML = "abbiamo perso noi ma non ti diamo na lira bye bye"
+            }
 
             /* aggiungo la parola chiave break in quanto serve per uscire dal ciclo se viene trovata una corrispondenza tra l'input utente e un elemento dell'array,
             altrimenti l'operatore di confronto non funziona */
