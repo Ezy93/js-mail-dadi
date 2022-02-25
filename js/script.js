@@ -1,16 +1,23 @@
-
+let mailList = ["harder@gmail.com" , "better@outlook.it" , "faster@yahoo.it", "stronger@leonardo.it"];
 let userSubmit = document.getElementById("submit");
 
-let mailList = ["harder@gmail.com" , "better@outlook.it" , "faster@yahoo.it", "stronger@leonardo.it"];
-console.log(mailList)
+
+
 
 userSubmit.addEventListener('click', function(){
 
+    
     let userMail = document.getElementById("mail").value;
 
-    for(let i = 0 ; i < 4 ; i++ ){
+    console.log(typeof userMail)
+    console.log(typeof mailList[1])
+
+    
+    
+
+    for(let i = 0 ; i <= 3 ; i++ ){
         
-        if ( mailList[i] == userMail.value ){
+        if( mailList[i] === userMail ){
 
             document.getElementById("output").innerHTML = "complimenti sei nella mailing list";
             
@@ -20,7 +27,8 @@ userSubmit.addEventListener('click', function(){
 
         }
     
-        console.log(mailList[i])
+        /* console.log(typeof mailList[i]) */
+        
     }
 
 
